@@ -280,35 +280,35 @@ createScrollTrigger("#contactSection", "top 30%", "bottom center", tlGradient);
 
 // 4 | ANIMACIÓN DE LOS ICONOS SVG //
 
-gsap.registerPlugin(MorphSVGPlugin);
+// gsap.registerPlugin(MorphSVGPlugin);
 
-// Selecciono todos los divs con la clase .feature;
-const features = document.querySelectorAll(".feature");
+// // Selecciono todos los divs con la clase .feature;
+// const features = document.querySelectorAll(".feature");
 
-features.forEach((feature) => {
-    const svg = feature.querySelector("svg");
-    const featureOrigin = svg.querySelector("path.origin");
-    const featureTarget = svg.querySelector("path.target");
+// features.forEach((feature) => {
+//     const svg = feature.querySelector("svg");
+//     const featureOrigin = svg.querySelector("path.origin");
+//     const featureTarget = svg.querySelector("path.target");
 
-    // Almaceno la forma original del path;
-    const originalPath = featureOrigin.getAttribute("d");
+//     // Almaceno la forma original del path;
+//     const originalPath = featureOrigin.getAttribute("d");
 
-    feature.addEventListener("mouseenter", () => {
-        gsap.to(featureOrigin, {
-            duration: 0.3,
-            morphSVG: featureTarget.getAttribute("d"),
-            ease: "power1.inOut"
-        });
-    });
+//     feature.addEventListener("mouseenter", () => {
+//         gsap.to(featureOrigin, {
+//             duration: 0.3,
+//             morphSVG: featureTarget.getAttribute("d"),
+//             ease: "power1.inOut"
+//         });
+//     });
 
-    feature.addEventListener("mouseleave", () => {
-        gsap.to(featureOrigin, {
-            duration: 0.3,
-            morphSVG: originalPath,
-            ease: "power1.inOut"
-        });
-    });
-});
+//     feature.addEventListener("mouseleave", () => {
+//         gsap.to(featureOrigin, {
+//             duration: 0.3,
+//             morphSVG: originalPath,
+//             ease: "power1.inOut"
+//         });
+//     });
+// });
 
 
 
