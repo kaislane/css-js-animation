@@ -743,8 +743,7 @@ strong {
 
 /* CARACTERÍSTICAS */
 
-/* Este código lo sustituyo por el cambio de color mediante el scroll */
-/* .features {
+.features {
     background: radial-gradient(circle at 60% -20%, rgba(26, 39, 201, 0.2) 0%, transparent 40rem),
         radial-gradient(circle at 100% 110%, rgba(26, 39, 201, 0.2) 0%, transparent 40rem);
     background-color: var(--grey);
@@ -757,7 +756,7 @@ strong {
         border-radius: 80px;
         padding: 120px 0 160px;
     }
-} */
+}
 
 .features__title {
     font-size: var(--title-mobile);
@@ -1223,7 +1222,7 @@ strong {
     opacity: 0.5;
 }
 
-/* .contact .container {
+.contact .container {
     padding-top: 20px;
 }
 
@@ -1231,21 +1230,21 @@ strong {
     .contact .container {
         padding-top: 40px;
     }
-} */
+}
 
 .contact {
-    /* background: radial-gradient(circle at 80% -20%, rgba(26, 39, 201, 0.2) 0%, transparent 40rem),
+    background: radial-gradient(circle at 80% -20%, rgba(26, 39, 201, 0.2) 0%, transparent 40rem),
         radial-gradient(circle at 30% 110%, rgba(26, 39, 201, 0.2) 0%, transparent 40rem);
     background-color: var(--grey);
-    border-radius: 60px 60px 0 0; */
-    /* padding: 60px 0 80px; */
+    border-radius: 60px 60px 0 0;
+    padding: 60px 0 80px;
     padding: 0 0 80px;
 }
 
 @media screen and (min-width: 768px) {
     .contact {
-        /* border-radius: 80px 80px 0 0; */
-        /* padding: 120px 0 160px; */
+        border-radius: 80px 80px 0 0;
+        padding: 120px 0 160px;
         padding: 0 0 160px;
     }
 }

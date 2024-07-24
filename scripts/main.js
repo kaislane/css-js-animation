@@ -3,7 +3,7 @@ gsap.config({
 })
 
 // https://gsap.com/docs/v3/Eases/CustomEase/
-gsap.registerPlugin(CustomEase);
+// gsap.registerPlugin(CustomEase);
 
 function map(x, a1, a2, b1, b2) {
     return ((x - a1) * (b2 - b1)) / (a2 - a1) + b1;
@@ -178,103 +178,103 @@ animateCursor();
 
 // 2 | ANIMACIÓN DEL TEXTO DEL HERO //
 
-gsap.registerPlugin(SplitText);
+// gsap.registerPlugin(SplitText);
 
-const heroTitle = document.querySelector(".hero__title");
-const heroSubtitle = document.querySelector(".hero__subtitle");
+// const heroTitle = document.querySelector(".hero__title");
+// const heroSubtitle = document.querySelector(".hero__subtitle");
 
-// Divido el texto en caracteres individuales;
-const splitChars = new SplitText(heroTitle, {
-    type: 'chars',
-})
+// // Divido el texto en caracteres individuales;
+// const splitChars = new SplitText(heroTitle, {
+//     type: 'chars',
+// })
 
-const char = splitChars.chars;
+// const char = splitChars.chars;
 
-// Creo el timeline;
-const tl = gsap.timeline({
-    paused: true,
-    defaults: {
-        ease: 'power2.inOut',
-    },
-})
+// // Creo el timeline;
+// const tl = gsap.timeline({
+//     paused: true,
+//     defaults: {
+//         ease: 'power2.inOut',
+//     },
+// })
 
-tl.fromTo(char, {
-    opacity: 0,
-    filter: 'blur(10px)',
-}, {
-    opacity: 1,
-    filter: 'blur(0px)',
-    stagger: 0.05,
-    duration: 2,
-})
+// tl.fromTo(char, {
+//     opacity: 0,
+//     filter: 'blur(10px)',
+// }, {
+//     opacity: 1,
+//     filter: 'blur(0px)',
+//     stagger: 0.05,
+//     duration: 2,
+// })
 
-tl.fromTo(heroSubtitle, {
-    y: 20,
-    opacity: 0,
-}, {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-})
+// tl.fromTo(heroSubtitle, {
+//     y: 20,
+//     opacity: 0,
+// }, {
+//     y: 0,
+//     opacity: 1,
+//     duration: 1,
+// })
 
-tl.play();
+// tl.play();
 
 
 
 // 3 | CAMBIO DEL FONDO CON EL SCROLL //
 
-gsap.registerPlugin(CustomEase, ScrollTrigger);
+// gsap.registerPlugin(CustomEase, ScrollTrigger);
 
-// Creación de un CustomEase;
-CustomEase.create(
-    'customFade',
-    'M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1',
-);
+// // Creación de un CustomEase;
+// CustomEase.create(
+//     'customFade',
+//     'M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1',
+// );
 
-const tlBackground = gsap.timeline({
-    paused: true,
-});
+// const tlBackground = gsap.timeline({
+//     paused: true,
+// });
 
-const contact = document.querySelector(".contact");
+// const contact = document.querySelector(".contact");
 
-const tlGradient = gsap.timeline({
-    paused: true,
-});
+// const tlGradient = gsap.timeline({
+//     paused: true,
+// });
 
-// Fondo de color sólido;
-tlBackground.fromTo("body", {
-    backgroundColor: "rgba(255, 255, 255, 0)"
-}, {
-    backgroundColor: "rgba(26, 39, 201, 0.3)",
-    duration: 1,
-    ease: "customFade"
-});
+// // Fondo de color sólido;
+// tlBackground.fromTo("body", {
+//     backgroundColor: "rgba(255, 255, 255, 0)"
+// }, {
+//     backgroundColor: "rgba(26, 39, 201, 0.3)",
+//     duration: 1,
+//     ease: "customFade"
+// });
 
-// Fondo gradiente;
-tlGradient.fromTo(contact, {
-    background: "rgba(255, 255, 255, 0)"
-}, {
-    background: "linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(26, 39, 201, 0.6))",
-    duration: 2,
-    ease: "customFade"
-});
+// // Fondo gradiente;
+// tlGradient.fromTo(contact, {
+//     background: "rgba(255, 255, 255, 0)"
+// }, {
+//     background: "linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(26, 39, 201, 0.6))",
+//     duration: 2,
+//     ease: "customFade"
+// });
 
-// Función para crear un ScrollTrigger;
-const createScrollTrigger = (trigger, start, end, timeline) => {
-    ScrollTrigger.create({
-        trigger,
-        start,
-        end,
-        onEnter: () => timeline.play(),
-        onLeaveBack: () => timeline.reverse(),
-        onEnterBack: () => timeline.play(),
-        onLeave: () => timeline.reverse(),
-    });
-};
+// // Función para crear un ScrollTrigger;
+// const createScrollTrigger = (trigger, start, end, timeline) => {
+//     ScrollTrigger.create({
+//         trigger,
+//         start,
+//         end,
+//         onEnter: () => timeline.play(),
+//         onLeaveBack: () => timeline.reverse(),
+//         onEnterBack: () => timeline.play(),
+//         onLeave: () => timeline.reverse(),
+//     });
+// };
 
-// Creación de ScrollTriggers;
-createScrollTrigger("#featuresSection", "top center", "bottom center", tlBackground);
-createScrollTrigger("#contactSection", "top 30%", "bottom center", tlGradient);
+// // Creación de ScrollTriggers;
+// createScrollTrigger("#featuresSection", "top center", "bottom center", tlBackground);
+// createScrollTrigger("#contactSection", "top 30%", "bottom center", tlGradient);
 
 
 
